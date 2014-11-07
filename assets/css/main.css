@@ -1,0 +1,17 @@
+body { margin: 0 auto; width: 960px; background: #eee; }
+
+header .logo { background: url('../img/banner.png') no-repeat 50% 50%;  height: 200px; }
+header form { float: right; margin-top: 5px; margin-right: 5px; }
+header .logo form input[type=search], header .logo form input[type=image] { float: right; }
+
+nav { width: 100%; margin: 0; height: 30px; font-family: "Arial"; }
+nav ul { margin: 0; }
+nav ul a { background: #4D7FA4; color: #fff; margin-right: 15px; display: block; float: left; width: 310px; text-decoration: none; line-height: 30px; text-align: center; letter-spacing: 5px; }
+nav ul a:hover { background: #B0C4DE; color: #000; }
+nav ul a.last { margin: 0; }
+
+footer { background: #4D7FA4; width: 960px; height: 90px;}
+footer .navigation { width: 180px; height: 100%; padding-top: 15px; float: left; }
+footer ul li a { color: #fff; line-height: 20px;  }
+footer ul li a:hover { text-decoration: underline; }
+footer div.dev { color: #fff; width: 600px; float: left; text-align: center; padding-top: 55px; }
