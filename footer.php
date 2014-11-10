@@ -8,8 +8,11 @@
 		</div>
 		<div class="dev">
 			<p>
-				Desenvolvido por: Adriano Casarim | Eduardo Santi | Thalita Cunha
+				Desenvolvimento: Adriano Casarim | Eduardo Santi 
 			</p>
+		</div>
+		<div class="icone">
+			<img src="assets/img/iconfooter.jpg" alt="Icone currículo">
 		</div>
 	</footer>
 </body>
