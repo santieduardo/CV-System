@@ -6,19 +6,21 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<meta charset="utf-8">
 </head>
-<body>
+<body onLoad="slider();">
 	<header>
 		<div class="logo">
+			<!--
 			<form>
 				<input type="image" src="assets/img/lupa.png">
 				<input type="search" placeholder="Pesquise por cidade">				
-			</form>
+			</form> -->
 		</div>
 		<nav>
 			<ul>
 				<a href="#">Início</a>
 				<a href="#">Gerencie seu Currículo</a>
-				<a href="#" class="last">Cadastre-se</a>
+				<a href="#">Cadastre-se</a>
+				<a href="#" class="last">Login</a>
 			</ul>
 		</nav>
 	</header>
