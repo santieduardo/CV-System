@@ -5,7 +5,7 @@ class BD{
 	private $host = "localhost";
 	private $usuario = "root";
 	private $senha = "";
-	private $banco = "ppi1";
+	private $banco = "cv_system";
 	private $conexao = null;
 
 	function conexao(){

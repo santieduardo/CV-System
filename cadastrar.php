@@ -4,11 +4,10 @@
 		include "classes/usuario.php";
 		include "classes/usuarioDAO.php";
 
-		$nome = $_POST["nome"];
 		$email = $_POST["email"];
 		$senha = $_POST["senha"];
 		
-		$usuario = new Usuario(null, $nome, $email, $senha);
+		$usuario = new Usuario(null, $email, $senha);
 
 		echo "<strong>Dados recebidos</strong><br>". $usuario . "<br>";
 

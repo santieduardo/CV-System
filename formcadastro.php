@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Cadastro de Usuário</title>
-</head>
-<body>
-	<form action="cadastrar.php" method="post">
+<?php include "header.php"; ?>
+
+	<form action="cadastrar.php" method="post" class="form-cadastro">
 		<h1>Cadastre-se</h1>
 		
-		<label for="nome">Nome:</label>
-		<input type="text" name="nome" id="nome" required>
-		
-		<label for="senha">Senha:</label>
-		<input type="password" name="senha" id="senha" required>
-		
-		<label for="email">E-mail:</label>
-		<input type="email" name="email" id="email" required>
-
-		<button name="enviar">Enviar</button>
-
+		<div class="form-email">
+			<label for="email">E-mail</label>
+			<input type="email" name="email" id="email" placeholder="Insira seu E-mail" required>
+		</div>
+		<div class="form-senha">
+			<label for="senha">Senha</label>
+			<input type="password" name="senha" id="senha" placeholder="Insira sua Senha" required>
+		</div>
+		<div class="form-enviar">
+			<input type="submit" value="Cadastrar">
+		</div>
 
 	</form>
-</body>
-</html>
+<?php include "footer.php"; ?>

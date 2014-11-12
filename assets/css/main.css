@@ -17,3 +17,17 @@ footer ul li a:hover { text-decoration: underline; }
 footer div.dev { color: #fff; width: 600px; float: left; text-align: center; padding-top: 55px; }
 footer div.icone { width: 180px; height: 90px; float: left; padding-top: 10px; padding-left: 50px; }
 footer div.icone img { box-shadow: 0 0 5px 2px rgba(0,0,0,0.6); }
+
+.form-cadastro { min-height: 280px; margin: 0 355px; width: 250px;}
+form h1 { color: #4D7FA4; margin-top: 30px; }
+
+.form-email { width: 100%; margin-top: 20px; }
+.form-email input[type=email] { width: 100%; }
+.form-email label { letter-spacing: 2px; }
+
+.form-senha { width: 100%; margin-top: 20px; }
+.form-senha input[type=password] { width: 100%; }
+.form-senha label { letter-spacing: 2px; }
+
+.form-enviar { width: 100%; margin-top: 20px; }
+.form-enviar input[type=submit] { float: right; background: #4D7FA4; color: #fff; border: none; width: 120px; height: 25px; font-size: 14px; letter-spacing: 1px; }

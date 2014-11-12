@@ -1,10 +1,10 @@
 	<footer>
 		<div class="navigation">
 			<ul>
-				<li><a href="#">Início</a></li>
+				<li><a href="index.php">Início</a></li>
 				<li><a href="#">Gerencie seu Currículo</a></li>
-				<li><a href="#">Login</a></li>
-				<li><a href="#">Cadastre-se</a></li>
+				<li><a href="login.php">Login</a></li>
+				<li><a href="formcadastro.php">Cadastre-se</a></li>
 			</ul>
 		</div>
 		<div class="dev">

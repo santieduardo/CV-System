@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<meta charset="utf-8">
 </head>
-<body onLoad="slider();">
+<body>
 	<header>
 		<div class="logo">
 			<!--
@@ -17,10 +17,10 @@
 		</div>
 		<nav>
 			<ul>
-				<a href="#">Início</a>
+				<a href="index.php">Início</a>
 				<a href="#">Gerencie seu Currículo</a>
-				<a href="#">Cadastre-se</a>
-				<a href="#" class="last">Login</a>
+				<a href="formcadastro.php">Cadastre-se</a>
+				<a href="login.php" class="last">Login</a>
 			</ul>
 		</nav>
 	</header>

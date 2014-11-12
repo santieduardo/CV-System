@@ -19,11 +19,10 @@ class UsuarioDAO extends BD {
 			if($stm->rowCount() > 0){
 				echo "E-mail já cadastrado!";
 			}else{
-				$stm = $this->conexao->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
+				$stm = $this->conexao->prepare("INSERT INTO usuarios (email, senha) VALUES (?, ?)");
 
-				$stm->bindValue(1, $usuario->nome);
-				$stm->bindValue(2, $usuario->email);
-				$stm->bindValue(3, $usuario->senha);
+				$stm->bindValue(1, $usuario->email);
+				$stm->bindValue(2, $usuario->senha);
 
 				$stm->execute();
 
@@ -53,7 +52,6 @@ class UsuarioDAO extends BD {
 				while ($dados = $stm->fetch(PDO::FETCH_OBJ)) {
 					echo "<br>Busca de dados cadastrados<br>";
 					echo "<strong>ID:</strong> ".$dados->id."<br>";
-					echo "<strong>Nome:</strong> ".$dados->nome."<br>";
 					echo "<strong>E-mail:</strong> ".$dados->email."<br>";
 					echo "<strong>Senha:</strong> ".$dados->senha."<br>";
 					echo "======================================";
@@ -78,7 +76,7 @@ class UsuarioDAO extends BD {
 				return null;
 			}else{
 				$dados = $stm->fetch(PDO::FETCH_OBJ);
-				return $dados->nome;
+				return $dados->email;
 			}
 
 
