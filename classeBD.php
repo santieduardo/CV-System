@@ -19,6 +19,53 @@ class BD{
 		}
 	}
 
+	function verificaEmail($email){
+	
+		$stm = "SELECT email FROM dados WHERE '$email' = email";
+		$resultado = mysqli_query($this->conexao, $stm) or die ("Não foi possivel pesquisar o email");
+
+		if( mysqli_num_rows($resultado) ){
+
+			echo "Este email já possui um cadastro.";
+
+			return false;
+
+		} else {
+
+			return true;
+		}
+
+
+
+	}
+
+
+	function atualizarDados($nome, $sobrenome, $nascimento, $endereco, $bairro, $estado, $profissao, $email){
+
+		if(verificaEmail($email)){
+
+			$insere = "INSERT INTO dados (nome, sobrenome, nascimento, endereco, bairro, estado, profissao) 
+					   VALUES ($nome, $sobrenome, $nascimento, $endereco, $bairro, $estado, $profissao)";
+
+			$resultado = mysqli_query($this->conexao, $insere) or die ("Não foi possivel atualizar os dados");
+
+		} else {
+
+			echo "erro";
+
+		}
+
+			
+
+
+
+		
+
+
+
+
+	}
+
 }
 
 ?>

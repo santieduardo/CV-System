@@ -1,12 +1,27 @@
-﻿<?php
-require "validacao.php";
+﻿
+<html>
+<head>
+	<?php
+		require "validacao.php";
+		include "header.php";
+	?>
+	<li><a href="logout.php">Sair</a></li>
 
-echo "Olá muuuuunnndo!";
+	<title>CV System</title>
 
-echo "<br>Bem vindo(a) <br>Seu ID é ".$_SESSION["id"].
-		".<br>Você logou em ".$_SESSION["datahora"];
+</head>
 
-echo "<br><br>";
-echo "<a href='logout.php'>Sair</a>";
+<body>
 
-?>
+
+	<h1>PAGINA MAIN HUE</h1>
+
+
+</body>
+
+<footer>
+	<?php include "footer.php";?>
+	
+</footer>
+
+</html>

@@ -18,7 +18,7 @@
 		<nav>
 			<ul>
 				<a href="index.php">Início</a>
-				<a href="#">Gerencie seu Currículo</a>
+				<a href="gerenciarcurriculo.php">Gerencie seu Currículo</a>
 				<a href="formcadastro.php">Cadastre-se</a>
 				<a href="login.php" class="last">Login</a>
 			</ul>
