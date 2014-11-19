@@ -1,27 +1,13 @@
-﻿
-<html>
-<head>
-	<?php
-		require "validacao.php";
-		include "header.php";
-	?>
-	<li><a href="logout.php">Sair</a></li>
+﻿<?php
+	require "validacao.php";
+	include "header.php";
+?>
+<main>	
+	<h1>Área Pessoal</h1>
 
-	<title>CV System</title>
+	<div class="logout">
+		<a href="logout.php">Sair</a>
+	</div>
+</main>
 
-</head>
-
-<body>
-
-
-	<h1>PAGINA MAIN HUE</h1>
-
-
-</body>
-
-<footer>
-	<?php include "footer.php";?>
-	
-</footer>
-
-</html>
+<?php include "footer.php";?>
