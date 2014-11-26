@@ -4,7 +4,14 @@ class Usuario{
 	
 	private $id;
 	private $nome;
-	protected $email;
+	private $sobrenome;
+	private $nascimento;
+	private $endereco;
+	private $bairro;
+	private $cidade;
+	private $estado;
+	private $profissao;
+	private $email;
 	private $senha;
 
 	function __construct($id="", $email="", $senha="5555"){

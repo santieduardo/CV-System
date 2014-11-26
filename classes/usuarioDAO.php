@@ -1,7 +1,5 @@
 ﻿<?php
 
-include "classeBD.php";
-
 class UsuarioDAO extends BD {
 
 	public function __construct(){
@@ -33,6 +31,45 @@ class UsuarioDAO extends BD {
 
 		}catch(PDOException $e){
 			echo "Erro: ".$e->getMessage();
+		}
+	}
+
+
+	public function atualizarDados($usuario){
+
+		echo $usuario;
+
+		try{
+			
+			$this->conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );												
+			$stm = $this->conexao->prepare("INSERT INTO dados ( id, nome, sobrenome, nascimento, endereco, bairro, cidade, estado, profissao )
+											VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+			/*$stm = $this->conexao->prepare("UPDATE dados SET id = ?, nome = ?, sobrenome = ?,
+												   	nascimento = ?, endereco = ?, bairro = ?, 
+													estado = ?, profissao = ?");
+			*/
+
+			echo "NOMEEEEEEEEEEEEE ".$usuario->nome;
+
+			$stm->bindValue(1, $usuario->id);
+			$stm->bindValue(2, $usuario->nome);
+			$stm->bindValue(3, $usuario->sobrenome);
+			$stm->bindValue(4, $usuario->nascimento);
+			$stm->bindValue(5, $usuario->endereco);
+			$stm->bindValue(6, $usuario->bairro);
+			$stm->bindValue(7, $usuario->cidade);
+			$stm->bindValue(8, $usuario->estado);
+			$stm->bindValue(9, $usuario->profissao);
+
+			$stm->execute();
+
+			print_r($this->conexao->errorInfo());
+
+		}catch(PDOException $e){
+
+			echo "Erro: " . $e->getMessage();
+
 		}
 	}
 
@@ -76,7 +113,7 @@ class UsuarioDAO extends BD {
 				return null;
 			}else{
 				$dados = $stm->fetch(PDO::FETCH_OBJ);
-				return $dados->email;
+				return $dados->id;
 			}
 
 

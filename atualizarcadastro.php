@@ -1,15 +1,13 @@
-<html>
-<head>
-	<?php include "header.php"; ?>
-	<title>Cadastro atualizado</title>
-</head>
-
-<body>
+<?php include "header.php"; ?>
 
 	<?php 
-
-		include "classeBD.php";
-		include "usuario.php";
+		
+		include "classes/classeBD.php";
+		include "classes/usuario.php";
+		include "classes/UsuarioDados.php";
+		include "classes/usuarioDAO.php";
+		require "validacao.php";
+		
 
 		$nome = $_POST["nome"];
 		$sobrenome = $_POST["sobrenome"];
@@ -20,24 +18,23 @@
 		$estado = $_POST["estado"];
 		$profissao = $_POST["profissao"];
 
+		$userID = $_SESSION["idusuario"];
+
 		
-		$acoes = new UsuarioDados($id, $nome, $sobrenome, $nascimento, $endereco, $bairro, $estado, $profissao);
-
-		if($acoes){
-
-			echo "Sucesso";
-
-		}
-
-		$acoes->atualizarDados();
+		$user = new UsuarioDados($userID, $nome, $sobrenome, $dtn, $endereco, $bairro, $cidade, $estado, $profissao);
 		
+		//echo $user;
+		
+		$acoes = new UsuarioDAO();
+		if($acoes)
+			echo "CONEXAO.";
+		else
+			echo "erro";
 
-
+		$dados = $acoes->atualizarDados($user);
 
 	?>
 
-</body>
 
-<footer> <?php include "footer.php"; ?></footer>
+<?php include "footer.php"; ?>
 
-</html>

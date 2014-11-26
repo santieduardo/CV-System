@@ -1,16 +1,16 @@
 <?php
 
 class BD{
-	$tipo = "mysql";
-	$host = "localhost";
-	$usuario = "root";
-	$senha = "";
-	$banco = "cv_system";
-	$conexao = null;
+	private $tipo = "mysql";
+	private $host = "localhost";
+	private $usuario = "root";
+	private $senha = "";
+	private $banco = "cv_system";
+	private $conexao = null;
 
 	function conexao(){
 		try{
-			$this->conexao = new PDO($this->tipo.":host=".$this->host.";dbname=";$this->banco, $this->usuario, $this->senha);
+			$this->conexao = new PDO($this->tipo.":host=".$this->host.";dbname=".$this->banco, $this->usuario, $this->senha);
 
 			return $this->conexao;
 

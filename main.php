@@ -1,13 +1,30 @@
-﻿<?php
-	require "validacao.php";
-	include "header.php";
-?>
-<main>	
-	<h1>Área Pessoal</h1>
+﻿
+<html>
+<head>
+	<?php
+		require "validacao.php";
+		include "header.php";
+	?>
+	<li><a href="logout.php">Sair</a></li>
 
-	<div class="logout">
-		<a href="logout.php">Sair</a>
-	</div>
-</main>
+	<title>CV System</title>
 
-<?php include "footer.php";?>
+</head>
+
+<body>
+
+	<?php
+		echo "ID USUARIO: ".$_SESSION["idusuario"];
+	?>
+
+	<h1>PAGINA MAIN HUE</h1>
+
+
+</body>
+
+<footer>
+	<?php include "footer.php";?>
+	
+</footer>
+
+</html>
