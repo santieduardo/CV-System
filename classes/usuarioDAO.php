@@ -1,5 +1,7 @@
 ﻿<?php
 
+	include "classeBD.php";
+
 class UsuarioDAO extends BD {
 
 	public function __construct(){

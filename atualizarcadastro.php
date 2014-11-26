@@ -2,7 +2,7 @@
 
 	<?php 
 		
-		include "classes/classeBD.php";
+	
 		include "classes/usuario.php";
 		include "classes/UsuarioDados.php";
 		include "classes/usuarioDAO.php";
@@ -11,7 +11,7 @@
 
 		$nome = $_POST["nome"];
 		$sobrenome = $_POST["sobrenome"];
-		$dtn = $_POST["dtn"];
+		$nascimento = $_POST["nascimento"];
 		$endereco = $_POST["endereco"];
 		$bairro = $_POST["bairro"];
 		$cidade = $_POST["cidade"];
@@ -21,7 +21,7 @@
 		$userID = $_SESSION["idusuario"];
 
 		
-		$user = new UsuarioDados($userID, $nome, $sobrenome, $dtn, $endereco, $bairro, $cidade, $estado, $profissao);
+		$user = new UsuarioDados($userID, $nome, $sobrenome, $nascimento, $endereco, $bairro, $cidade, $estado, $profissao);
 		
 		//echo $user;
 		

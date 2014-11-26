@@ -1,6 +1,6 @@
 <?php
 	
-	include "classes/classeBD.php";
+	
 	include "classes/usuario.php";
 	include "classes/usuarioDAO.php";
 

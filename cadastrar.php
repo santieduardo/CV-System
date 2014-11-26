@@ -18,8 +18,9 @@
 		}
 
 		$acoes->inserir($usuario);
-		$acoes->visualizar();
-		$acoes->visualizar(2);
+		
+		header("Location: login.php");
+
 	}
 
 

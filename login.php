@@ -13,15 +13,7 @@
 		<div class="form-enviar">
 			<input type="submit" value="Entrar">
 		</div>
-		<!--<h1>Logue-se</h1>
-
-		<label for="email">E-mail:</label>
-		<input type="email" name="email" id="email" required>
-
-		<label for="senha">Senha:</label>
-		<input type="password" name="senha" id="senha" required>
-
-		<button name="enviar">Entrar</button> -->
-
+	
+	
 	</form>
 <?php include "footer.php"; ?>

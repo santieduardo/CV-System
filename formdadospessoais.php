@@ -16,8 +16,8 @@
 			<input type="text" name="sobrenome" id="sobrenome"/>
 		</div>
 		<div class="form-nascimento">
-			<label for="nasc">Nascimento: </label>
-			<input type="text" name="nasc" id="nasc"/>
+			<label for="nascimento">Nascimento: </label>
+			<input type="text" name="nascimento" id="nascimento"/>
 		</div>
 		<div class="form-endereco">
 			<label for="endereco">Endereço: </label>
