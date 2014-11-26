@@ -10,9 +10,12 @@
 		private $cidade;
 		private $estado;
 		private $profissao;
+		private $cargo;
+		private $inicio;
+		private $termino;
+		private $atividades;
 
-							//$userID, $nome, $sobrenome, $dtn, $endereco, $bairro, $cidade, $estado, $profissao);
-		function __construct($id, $nome, $sobrenome, $nascimento, $endereco, $bairro, $cidade, $estado, $profissao){
+		function __construct($id, $nome, $sobrenome, $nascimento, $endereco, $bairro, $cidade, $estado, $profissao, $cargo, $inicio, $termino, $atividades){
 			
 
 			parent::__construct($id, null, null);
@@ -27,6 +30,10 @@
 			$this->cidade = $cidade;
 			$this->estado = $estado;
 			$this->profissao = $profissao;
+			$this->cargo = $cargo;
+			$this->inicio = $inicio;
+			$this->termino = $termino;
+			$this->atividades = $atividades;
 
 		}
 

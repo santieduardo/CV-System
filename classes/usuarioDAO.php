@@ -42,37 +42,90 @@ class UsuarioDAO extends BD {
 		echo $usuario;
 
 		try{
-			
-			$this->conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );												
-			$stm = $this->conexao->prepare("INSERT INTO dados ( id, nome, sobrenome, nascimento, endereco, bairro, cidade, estado, profissao )
-											VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-			/*$stm = $this->conexao->prepare("UPDATE dados SET id = ?, nome = ?, sobrenome = ?,
-												   	nascimento = ?, endereco = ?, bairro = ?, 
-													estado = ?, profissao = ?");
-			*/
-
-			echo "NOMEEEEEEEEEEEEE ".$usuario->nome;
+			$stm = $this->conexao->prepare("SELECT id FROM dados WHERE id=?");
 
 			$stm->bindValue(1, $usuario->id);
-			$stm->bindValue(2, $usuario->nome);
-			$stm->bindValue(3, $usuario->sobrenome);
-			$stm->bindValue(4, $usuario->nascimento);
-			$stm->bindValue(5, $usuario->endereco);
-			$stm->bindValue(6, $usuario->bairro);
-			$stm->bindValue(7, $usuario->cidade);
-			$stm->bindValue(8, $usuario->estado);
-			$stm->bindValue(9, $usuario->profissao);
 
 			$stm->execute();
 
-			print_r($this->conexao->errorInfo());
+
+			if($stm->rowCount() > 0){
+			
+				$stm = $this->conexao->prepare("UPDATE dados SET nome = ?, sobrenome = ?,
+													   	nascimento = ?, endereco = ?, bairro = ?,
+													   	cidade = ?, 
+														estado = ?, profissao = ?
+												WHERE id = ?");
+				
+			
+
+				
+				$stm->bindValue(1, $usuario->nome);
+				$stm->bindValue(2, $usuario->sobrenome);
+				$stm->bindValue(3, $usuario->nascimento);
+				$stm->bindValue(4, $usuario->endereco);
+				$stm->bindValue(5, $usuario->bairro);
+				$stm->bindValue(6, $usuario->cidade);
+				$stm->bindValue(7, $usuario->estado);
+				$stm->bindValue(8, $usuario->profissao);
+				$stm->bindValue(9, $usuario->id);
+
+				$stm->execute();
+
+			//	print_r($this->conexao->errorInfo());
+			
+			
+			} else {
+
+				$this->conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );												
+				$stm = $this->conexao->prepare("INSERT INTO dados ( id, nome, sobrenome, nascimento, endereco, bairro, cidade, estado, profissao )
+												VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				
+
+				$stm->bindValue(1, $usuario->id);
+				$stm->bindValue(2, $usuario->nome);
+				$stm->bindValue(3, $usuario->sobrenome);
+				$stm->bindValue(4, $usuario->nascimento);
+				$stm->bindValue(5, $usuario->endereco);
+				$stm->bindValue(6, $usuario->bairro);
+				$stm->bindValue(7, $usuario->cidade);
+				$stm->bindValue(8, $usuario->estado);
+				$stm->bindValue(9, $usuario->profissao);
+
+				$stm->execute();
+
+				//print_r($this->conexao->errorInfo());
+
+			}
+
+
 
 		}catch(PDOException $e){
 
 			echo "Erro: " . $e->getMessage();
 
 		}
+	}
+
+
+	public function atualizarExperiencias($usuario){
+
+		$this->conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+
+		$stm = $this->conexao->prepare("INSERT INTO experiencias (usuario, cargo, inicio, termino, atividades) VALUES (?,?,?,?,?)");
+
+		$stm->bindValue(1, $usuario->id);
+		$stm->bindValue(2, $usuario->cargo);
+		$stm->bindValue(3, $usuario->inicio);
+		$stm->bindValue(4, $usuario->termino);
+		$stm->bindValue(5, $usuario->atividades);
+
+
+		$stm->execute();
+
+		print_r($this->conexao->errorInfo());
+
 	}
 
 	public function visualizar($id = ""){

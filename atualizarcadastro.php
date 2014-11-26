@@ -20,8 +20,8 @@
 
 		$userID = $_SESSION["idusuario"];
 
-		
-		$user = new UsuarioDados($userID, $nome, $sobrenome, $nascimento, $endereco, $bairro, $cidade, $estado, $profissao);
+		($userID, "", "", "", "", "", "", "", "", $cargo, $inicio, $termino, $atividades)
+		$user = new UsuarioDados($userID, $nome, $sobrenome, $nascimento, $endereco, $bairro, $cidade, $estado, $profissao, "", "", "", "");
 		
 		//echo $user;
 		
