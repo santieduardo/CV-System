@@ -9,16 +9,11 @@
 <body>
 	<header>
 		<div class="logo">
-			<!--
-			<form>
-				<input type="image" src="assets/img/lupa.png">
-				<input type="search" placeholder="Pesquise por cidade">				
-			</form> -->
 		</div>
 		<nav>
 			<ul>
 				<a href="index.php">Início</a>
-				<a href="formgerenciarcurriculo.php">Gerencie seu Currículo</a>
+				<a href="formdadospessoais.php">Gerencie seu Currículo</a>
 				<a href="formcadastro.php">Cadastre-se</a>
 				<a href="login.php" class="last">Login</a>
 			</ul>

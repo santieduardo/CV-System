@@ -16,7 +16,7 @@ footer div.dev { color: #fff; width: 600px; float: left; text-align: center; pad
 footer div.icone { width: 180px; height: 90px; float: left; padding-top: 10px; padding-left: 50px; }
 footer div.icone img { box-shadow: 0 0 5px 2px rgba(0,0,0,0.6); }
 
-.form-login, .form-atualizar-cadastro { min-height: 280px; margin: 0 355px; width: 250px; }
+.form-login, .form-cadastro, .form-atualizar-cadastro { min-height: 280px; margin: 0 355px; width: 250px; }
 .form-atualizar-cadastro { min-height: 600px; margin: 0 355px; width: 250px; }
 
 form h1 { color: #4D7FA4; margin-top: 30px; }
