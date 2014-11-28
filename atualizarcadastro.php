@@ -8,7 +8,7 @@
 		include "classes/usuarioDAO.php";
 		require "validacao.php";
 		
-
+	
 		$nome = $_POST["nome"];
 		$sobrenome = $_POST["sobrenome"];
 		$nascimento = $_POST["nascimento"];
@@ -20,7 +20,7 @@
 
 		$userID = $_SESSION["idusuario"];
 
-		($userID, "", "", "", "", "", "", "", "", $cargo, $inicio, $termino, $atividades)
+		//($userID, "", "", "", "", "", "", "", "", $cargo, $inicio, $termino, $atividades)
 		$user = new UsuarioDados($userID, $nome, $sobrenome, $nascimento, $endereco, $bairro, $cidade, $estado, $profissao, "", "", "", "");
 		
 		//echo $user;
