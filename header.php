@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="bjqs.css">
 
     <!-- some pretty fonts for this demo page - not required for the slider -->
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css'> 
+    <link  rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Code+Pro%7COpen+Sans:300"> 
 
     <!-- demo.css contains additional styles used to set up this demo page - not required for the slider --> 
     <link rel="stylesheet" href="demo.css">
@@ -22,10 +22,10 @@
 		<div class="logo"></div>
 		<nav>
 			<ul>
-				<a href="index.php">Início</a>
-				<a href="formdadospessoais.php">Gerencie seu Currículo</a>
-				<a href="formcadastro.php">Cadastre-se</a>
-				<a href="login.php" class="last">Login</a>
+				<li><a href="index.php">Início</a></li>
+				<li><a href="formdadospessoais.php">Gerencie seu Currículo</a></li>
+				<li><a href="formcadastro.php">Cadastre-se</a></li>
+				<li><a href="login.php" class="last">Login</a></li>
 			</ul>
 		</nav>
 	</header>
