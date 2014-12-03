@@ -5,18 +5,15 @@
 	require "validacao.php";
 
 
-
 	if(isset($_POST)){
 
 		$senha = $_POST["senha"];
+		$userID = $_SESSION["idusuario"];
 
 		$acoes = new UsuarioDAO();
-		if($acoes)
-			echo "CONEXAO.";
-		else
-			echo "erro";
+		$dados = new Usuario($userID, "", $senha);
 
-		$acoes->deletarConta(retonarID());
+		$acoes->deletarConta($dados);
 
 	}
 
