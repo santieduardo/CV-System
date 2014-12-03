@@ -57,7 +57,7 @@
 					$stm->bindValue(8, $usuario->profissao);
 					$stm->bindValue(9, $usuario->id);
 					$stm->execute();
-					echo "<script type='text/javascript'> alert('Dados atualizados com sucesso');</script>";
+					
 					header("Location: formdadospessoais.php");
 					
 				} else {
@@ -74,7 +74,7 @@
 					$stm->bindValue(8, $usuario->estado);
 					$stm->bindValue(9, $usuario->profissao);
 					$stm->execute();
-					echo "<script type='text/javascript'> alert('Dados inseridos com sucesso');</script>";
+					
 					header("Location: formdadospessoais.php");
 				}
 			}catch(PDOException $e){
@@ -102,8 +102,8 @@
 					$stm->bindValue(4, $usuario->atividades);
 					$stm->bindValue(5, $usuario->id);
 					$stm->execute();
-					echo "<script type='text/javascript'> alert('Dados atualizados com sucesso');</script>";
-					header("Location: forminserirexperiencia.php");
+					header("Location: forminserirexperiencia.php" );
+
 				}else{
 					$this->conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 					$stm = $this->conexao->prepare("INSERT INTO experiencias (usuario, cargo, inicio, termino, atividades) 
@@ -115,7 +115,7 @@
 					$stm->bindValue(5, $usuario->atividades);
 					$stm->execute();
 					print_r($this->conexao->errorInfo());
-					echo "<script type='text/javascript'> alert('Dados inseridos com sucesso');</script>";
+					
 					header("Location: forminserirexperiencia.php");
 				}
 			}catch(PDOException $e){
@@ -142,6 +142,31 @@
 				echo "Erro: " . $e->getMessage();
 			}
 
+		}
+
+		public function deletarConta($usuario){
+			try{
+				$stm = $this->conexao->prepare("SELECT senha 
+												FROM usuarios 
+												WHERE id = ?");
+				$stm->bindValue(1, $usuario->id);
+				$dados = $stm->execute();
+
+				if($stm->rowCount() > 0){
+
+					if(md5($senha) == $dados->senha){
+						$stm = $this->conexao->prepare("DELETE * 
+												FROM usuarios 
+												WHERE id = ?");
+						$stm->bindValue(1, $usuario->id);
+						$dados = $stm->execute();
+					}else{
+						echo "Senha Incorreta";
+					}
+				}
+			}catch(PDOException $e){
+				echo "Erro: ".$e->getMessage();
+			}
 		}
 
 		public function retornarDados($usuario){
