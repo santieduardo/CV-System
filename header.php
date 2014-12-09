@@ -23,7 +23,7 @@
 		<nav>
 			<ul>
 				<li><a href="index.php">Início</a></li>
-				<li><a href="formdadospessoais.php">Gerencie seu Currículo</a></li>
+				<li><a href="main.php">Gerencie seu Currículo</a></li>
 				<li><a href="formcadastro.php">Cadastre-se</a></li>
 				<li><a href="login.php" class="last">Login</a></li>
 			</ul>

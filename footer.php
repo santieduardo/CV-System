@@ -2,7 +2,7 @@
 		<div class="navigation">
 			<ul>
 				<li><a href="index.php">Início</a></li>
-				<li><a href="formdadospessoais.php">Gerencie seu Currículo</a></li>
+				<li><a href="main.php">Gerencie seu Currículo</a></li>
 				<li><a href="login.php">Login</a></li>
 				<li><a href="formcadastro.php">Cadastre-se</a></li>
 			</ul>
