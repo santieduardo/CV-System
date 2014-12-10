@@ -1,12 +1,14 @@
 ﻿<?php
 	require "validacao.php";
+	include "classes/usuario.php";
+	include "classes/usuarioDados.php";
+	include "classes/usuarioDAO.php";
 	include "header.php";
 ?>
-<?php
-	echo "ID USUARIO: ".$_SESSION["idusuario"];
-?>
+
 
 <div class="area-pessoal">
+	<br/>
 	<h1>Área Pessoal</h1>
 	<ul>
 		<li><a href="formdadospessoais.php">Dados Pessoais</a></li>

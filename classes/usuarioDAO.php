@@ -164,8 +164,12 @@
 						$stm = $this->conexao->prepare("DELETE FROM usuarios WHERE id = ?");
 						$stm->bindValue(1, $usuario->id);
 						$stm->execute();
+
+						echo "<div class='area-pessoal'><h1 class='aviso-default'>Sua conta foi deletada com sucesso</h1></div>";
+						header("refresh:3; url=index.php");
+
 					}else{
-						echo "Senha Incorreta";
+						echo "<div class='area-pessoal'><h1 class='aviso-default'>Senha Incorreta</h1></div>";
 						header("refresh:3; url=deletarconta.php");
 					}
 				}
