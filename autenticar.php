@@ -1,6 +1,7 @@
 <?php
 	include "classes/usuario.php";
 	include "classes/usuarioDAO.php";
+	include "header.php";
 
 if(isset($_POST)){
 
@@ -11,7 +12,7 @@ if(isset($_POST)){
 	$acoes = new UsuarioDAO();
 
 	if(($dados = $acoes->autenticar($usuario)) == null){
-		echo "Dados inválidos!";
+		echo "<div class='area-pessoal'><h1 class='aviso-default'>Seus dados estão incorretos</h1></div>";
 		header("refresh:3; url=login.php");
 	}else{
 		session_start();
@@ -26,5 +27,5 @@ if(isset($_POST)){
 
 }
 	
-
+	include "footer.php";
 ?>
