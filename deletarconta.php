@@ -1,4 +1,7 @@
-<?php include "header.php"; ?>
+<?php 
+	include "header.php"; 
+	include "validacao.php";
+?>
 	<form action="deletar.php" method="post" class="form-cadastro">
 		<h1>Deletar Conta</h1>
 		

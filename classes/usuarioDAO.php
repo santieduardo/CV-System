@@ -142,22 +142,21 @@
 
 		public function deletarConta($usuario){
 			try{
-				$stm = $this->conexao->prepare("SELECT senha 
-												FROM usuarios 
-												WHERE usuario = ?");
+				$stm = $this->conexao->prepare("SELECT senha FROM usuarios WHERE id = ?");
 				$stm->bindValue(1, $usuario->id);
-				$dados = $stm->execute();
-
+				$stm->execute();
+				
+				$retorno = $stm->fetch(PDO::FETCH_OBJ);
+				
 				if($stm->rowCount() > 0){
 
-					if(md5($senha) == $dados->senha){
-						$stm = $this->conexao->prepare("DELETE * 
-												FROM usuarios 
-												WHERE usuario = ?");
+					if($retorno->senha == $usuario->senha){
+						$stm = $this->conexao->prepare("DELETE FROM usuarios WHERE id = ?");
 						$stm->bindValue(1, $usuario->id);
-						$dados = $stm->execute();
+						$stm->execute();
 					}else{
 						echo "Senha Incorreta";
+						header("refresh:3; url=deletarconta.php");
 					}
 				}
 			}catch(PDOException $e){
@@ -222,10 +221,7 @@
 		}
 		public function autenticar($usuario){
 			try{
-				$stm = $this->conexao->prepare("SELECT * 
-												FROM usuarios
-												WHERE email = ? 
-												AND senha = ?");
+				$stm = $this->conexao->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
 					$stm->bindValue(1, $usuario->email);
 					$stm->bindValue(2, $usuario->senha);
 					$stm->execute();
