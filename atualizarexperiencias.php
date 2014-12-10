@@ -10,7 +10,7 @@
 	$termino = $_POST["termino"];
 	$atividades = $_POST["atividades"];
 	$userID = $_SESSION["idusuario"];
-	//($userID, "", "", "", "", "", "", "", "", $cargo, $inicio, $termino, $atividades)
+	
 	$user = new UsuarioDados($userID, "", "", "", "", "", "", "", "", $cargo, $inicio, $termino, $atividades);
 	//echo $user;
 	$acoes = new UsuarioDAO();

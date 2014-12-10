@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	include "classeBD.php";
 	class UsuarioDAO extends BD {
 
@@ -83,24 +83,25 @@
 		}
 		public function atualizarExperiencias($usuario){
 			try{
-				$stm = $this->conexao->prepare("SELECT id FROM dados WHERE id = ?");
+				$stm = $this->conexao->prepare("SELECT * FROM experiencias WHERE usuario = ?");
 
 				$stm->bindValue(1, $usuario->id);
 				$stm->execute();
 				
 				if($stm->rowCount() > 0){
 					$stm = $this->conexao->prepare("UPDATE experiencias SET cargo = ?, inicio = ?, 
-													termino = ?, atividades = ? WHERE id = ?");
+													termino = ?, atividades = ? WHERE usuario = ?");
 					$stm->bindValue(1, $usuario->cargo);
 					$stm->bindValue(2, $usuario->inicio);
 					$stm->bindValue(3, $usuario->termino);
 					$stm->bindValue(4, $usuario->atividades);
 					$stm->bindValue(5, $usuario->id);
 					$stm->execute();
+					
 					header("Location: forminserirexperiencia.php");
 
 				}else{
-					//$this->conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+					
 					$stm = $this->conexao->prepare("INSERT INTO experiencias (usuario, cargo, inicio, termino, atividades) 
 													VALUES (?,?,?,?,?)");
 					$stm->bindValue(1, $usuario->id);
@@ -109,7 +110,7 @@
 					$stm->bindValue(4, $usuario->termino);
 					$stm->bindValue(5, $usuario->atividades);
 					$stm->execute();
-					//print_r($this->conexao->errorInfo());
+					
 					
 					header("Location: forminserirexperiencia.php");
 				}
@@ -143,7 +144,7 @@
 			try{
 				$stm = $this->conexao->prepare("SELECT senha 
 												FROM usuarios 
-												WHERE id = ?");
+												WHERE usuario = ?");
 				$stm->bindValue(1, $usuario->id);
 				$dados = $stm->execute();
 
@@ -152,7 +153,7 @@
 					if(md5($senha) == $dados->senha){
 						$stm = $this->conexao->prepare("DELETE * 
 												FROM usuarios 
-												WHERE id = ?");
+												WHERE usuario = ?");
 						$stm->bindValue(1, $usuario->id);
 						$dados = $stm->execute();
 					}else{

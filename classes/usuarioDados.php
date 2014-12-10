@@ -34,16 +34,6 @@ $this->$prop = $valor;
 function __get($prop){
 return $this->$prop;
 }
-function __toString() {
-return "O usuario de ID: <strong>".$this->id."</strong><br>".
-" se chama <strong>".$this->nome."</strong><br>".
-" com sobrenome <strong>".$this->sobrenome."</strong><br>".
-" e nascimento <strong>".$this->nascimento."</strong><br>".
-" endereco <strong>".$this->endereco."</strong><br>".
-" bairro <strong>".$this->bairro."</strong><br>" .
-" cidade <strong>".$this->cidade."</strong><br>" .
-" estado <strong>".$this->estado."</strong><br>" .
-" profissao <strong>".$this->profissao."</strong><br>";
-}
+
 }
 ?>
