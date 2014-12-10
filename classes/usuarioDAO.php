@@ -121,18 +121,28 @@
 
 		public function retornarExperiencias($usuario){
 			try{
-				$stm = $this->conexao->prepare("SELECT * 
-												FROM experiencias 
-												WHERE usuario=?");
+				$stm = $this->conexao->prepare("SELECT * FROM experiencias WHERE usuario = ?");
 
 				$stm->bindValue(1, $usuario);
 				$stm->execute();
+				
+				if($stm->rowCount() > 0){
 
-				if($stm->rowCount() == 0) {
-					return null;
-				} else {
-					$dados = $stm->fetch(PDO::FETCH_OBJ);
-					return $dados;
+					$stm = $this->conexao->prepare("SELECT * 
+													FROM experiencias 
+													WHERE usuario=?");
+
+					$stm->bindValue(1, $usuario);
+					$stm->execute();
+
+					if($stm->rowCount() == 0) {
+						return null;
+					} else {
+						$dados = $stm->fetch(PDO::FETCH_OBJ);
+						return $dados;
+					}
+				}else{
+
 				}
 			}catch(PDOException $e){
 				echo "Erro: " . $e->getMessage();
